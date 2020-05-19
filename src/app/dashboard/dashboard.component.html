@@ -1,0 +1,38 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row" >
+          <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let product of Product">
+              <div class="card card-stats">
+                  <div class="card-header card-header-warning card-header-icon">
+                      <div class="card-icon font-weight-bold">
+                          {{ product.name }}
+                      </div>
+                      <p class="card-category"> </p>
+                      <h3 class="card-title">
+                          <small>$ {{ product.price }}</small>
+                      </h3>
+                  </div>
+                  <div class="card-body">
+                      <dic>
+                          <div>
+                              <div class="picsum-img-wrapper text-center">
+                                  <img [src]="'data:image/png;base64,'+product.image[0]" class="img-thumbnail">
+                              </div>
+                          </div>
+                      </dic>
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          {{ product.description }}
+                      </div>
+                  </div>
+                  <div class="text-center">
+                      <a href="javascript:void(0)" (click)="addItemProduct(product)" class="btn btn-warning btn-round d-inline-block">
+                          <i class="material-icons">add_shopping_cart</i> Añadir</a>
+                  </div>
+                  <br/>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
